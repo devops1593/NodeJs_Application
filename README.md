@@ -1,4 +1,7 @@
-![image](https://user-images.githubusercontent.com/44673510/113385781-6a2b2a00-93a6-11eb-9a48-07ce15079c03.png)
+
+![image](https://user-images.githubusercontent.com/44673510/113386411-d3f80380-93a7-11eb-997e-f4a0415ac187.png)
+
+
 
 # Simple DevOps Project CI CD Using Node JS 
 

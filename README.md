@@ -98,9 +98,6 @@ Pre-requistes
 
 ![image](https://user-images.githubusercontent.com/44673510/113387253-94321b80-93a9-11eb-976a-29057d1bae61.png)
 
-AWS CICD NodeJs :
-===============
-![image](https://user-images.githubusercontent.com/44673510/113387630-4f5ab480-93aa-11eb-89d5-0ad6cce8a777.png)
 
 1. Developer pushes a commit to GitHub
 2. GitHub uses a webhook to notify Jenkins of the update
@@ -109,4 +106,15 @@ AWS CICD NodeJs :
 5. Jenkins instantiates the Docker container on the slave node, and executes the appropriate tests
 6. If the tests are successful the image is then pushed up to Dockerhub or Docker Trusted Registry.
 
+AWS CICD NodeJs :
+===============
+![image](https://user-images.githubusercontent.com/44673510/113387630-4f5ab480-93aa-11eb-89d5-0ad6cce8a777.png)
+
+1.Developers commit code to an AWS CodeCommit repository and create pull requests to review proposed changes to the production code. When the pull request is merged into the master branch in the AWS CodeCommit repository, AWS CodePipeline automatically detects the changes to the branch and starts processing the code changes through the pipeline.
+2.AWS CodeBuild packages the code changes as well as any dependencies and builds a Docker image. Optionally, another pipeline stage tests the code and the package, also using AWS CodeBuild.
+3.The Docker image is pushed to Amazon ECR after a successful build and/or test stage.
+4.AWS CodePipeline invokes an AWS Lambda function that includes the Kubernetes Python client as part of the function’s resources. The Lambda function performs a string replacement on the tag used for the Docker image in the Kubernetes deployment file to match the Docker image tag applied in the build, one that matches the image in Amazon ECR.
+5.After the deployment manifest update is completed, AWS Lambda invokes the Kubernetes API to update the image in the Kubernetes application deployment.
+6.Kubernetes performs a rolling update of the pods in the application deployment to match the docker image specified in Amazon ECR.
+The pipeline is now live and responds to changes to the master branch of the CodeCommit repository. This pipeline is also fully extensible, you can add steps for performing testing or adding a step to deploy into a staging environment before the code ships into the production cluster.
 

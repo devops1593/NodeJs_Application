@@ -87,18 +87,26 @@ CMD npm start
 ```
 
 
-JenkinsFile:
-===========
-
-
-![image](https://user-images.githubusercontent.com/44673510/113385673-394af500-93a6-11eb-9bd8-0e3b3d3aa0fb.png)
-
-Pre-requistes:
-=============
+By using JenkinsFile:
+====================
+Pre-requistes
 1. Jenkins is up and running
 2. Docker installed on Jenkins instance and configured.
 3. Docker plug-in installed in Jenkins
 4. user account setup in https://cloud.docker.com
 5. Required port is opened up in firewall rules.
+
+![image](https://user-images.githubusercontent.com/44673510/113387253-94321b80-93a9-11eb-976a-29057d1bae61.png)
+
+AWS CICD NodeJs :
+===============
+![image](https://user-images.githubusercontent.com/44673510/113387630-4f5ab480-93aa-11eb-89d5-0ad6cce8a777.png)
+
+1. Developer pushes a commit to GitHub
+2. GitHub uses a webhook to notify Jenkins of the update
+3. Jenkins pulls the GitHub repository, including the Dockerfile describing the image, as well as the application and test code.
+4. Jenkins builds a Docker image on the Jenkins slave node
+5. Jenkins instantiates the Docker container on the slave node, and executes the appropriate tests
+6. If the tests are successful the image is then pushed up to Dockerhub or Docker Trusted Registry.
 
 

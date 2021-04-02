@@ -1,5 +1,5 @@
 
-![image](https://user-images.githubusercontent.com/44673510/113385341-92feef80-93a5-11eb-8156-88a50759445d.png)
+![image](https://user-images.githubusercontent.com/44673510/113385673-394af500-93a6-11eb-9bd8-0e3b3d3aa0fb.png)
 
 
 # Simple DevOps Project CI CD Using Node JS 

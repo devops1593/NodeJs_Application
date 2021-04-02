@@ -36,7 +36,7 @@ Click Save and Apply
 
 ``` sh 
 
-Git URL - https://github.com/Abhishek08/node-js-sample.git
+Git URL - https://github.com/devops1593/NodeJs_Application.git
 
 WebHook Connection URL - http://IPADDRESS/github-webhook/ (push)
 
@@ -60,7 +60,7 @@ docker rmi nodeimage;
 docker stop nodecontainer;
 docker rm nodecontainer;
 docker build -t nodeimage .;
-docker run -d --name nodecontainer -p 5001:5000 nodeimage;
+docker run -d --name nodecontainer -p 3000:3000 nodeimage;
 
 ```
 
@@ -68,19 +68,12 @@ docker run -d --name nodecontainer -p 5001:5000 nodeimage;
 
 ``` sh 
 FROM node:latest
-
-MAINTAINER Abhishek Modi 
-
-RUN echo "Tryin to build my first application"
-
-COPY . /var/www
-
-WORKDIR /var/www
-
+MAINTAINER  prathibha
+RUN echo "Build Node Js application"
+WORKDIR /app
+ADD . /app
 RUN npm install
-
 EXPOSE 3000
-
-ENTRYPOINT ["npm","start"]
+CMD npm start
 ```
 

@@ -110,6 +110,9 @@ AWS CICD NodeJs :
 ===============
 ![image](https://user-images.githubusercontent.com/44673510/113387630-4f5ab480-93aa-11eb-89d5-0ad6cce8a777.png)
 
+![Uploading image.png…]()
+
+
 1.Developers commit code to an AWS CodeCommit repository and create pull requests to review proposed changes to the production code. When the pull request is merged into the master branch in the AWS CodeCommit repository, AWS CodePipeline automatically detects the changes to the branch and starts processing the code changes through the pipeline.
 
 2.AWS CodeBuild packages the code changes as well as any dependencies and builds a Docker image. Optionally, another pipeline stage tests the code and the package, also using AWS CodeBuild.

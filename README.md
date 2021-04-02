@@ -1,6 +1,11 @@
 
 ![image](https://user-images.githubusercontent.com/44673510/113386411-d3f80380-93a7-11eb-997e-f4a0415ac187.png)
 
+A simple CI/CD pipeline using Jenkins
+We are going to use Jenkins (https://jenkins.io) as our automation server.  When using Jenkins, the central document is the Jenkinsfile, which will contain the definition of the pipeline with its multiple stages.
+
+A simple Jenkinsfile with the Build, Test, Deploy to Staging, and Deploy to Production dev/stag/prod could look like this:
+
 
 
 # Simple DevOps Project CI CD Using Node JS 
